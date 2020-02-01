@@ -1,0 +1,146 @@
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--colour-grey-light-2);
+    -webkit-box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-dark);
+
+    //TESTING:
+    min-height: 50rem;
+
+    @media only screen and (max-width: $breakpoint-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%; // just to be sure
+    }
+}
+
+.header {
+    font-size: 1.5rem;
+    height: 7rem;
+    background-color: #FFF;
+    border-bottom: var(--line);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: 11rem;
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+}
+
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--colour-grey-dark-1);
+    //Translates to NO GROW if no space, NO SHRINK if not enough space, and set custom width to 18%
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 18%;
+    flex: 0 0 18%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.hotel-view {
+    background-color: #FFF;
+    //NOTE: flex: 1 = GROW as much as possible
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--colour-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 3rem;
+    }
+
+    //NOTE: ORDER OF MEDIA QUERIES MATTERS. TOUJOURS LARGEST TO SMALLEST SO SMALLEST APPLIES IF NECESSSARY
+
+    @media only screen and (max-width: $breakpoint-small) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: #FFF;
+    -webkit-box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-light);
+    // no grow no shrink and 60%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    padding: 3rem;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+
+    }
+
+}
+
+.user-reviews {
+    // Take up rest of remaining space
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
